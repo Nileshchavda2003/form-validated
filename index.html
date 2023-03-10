@@ -9,32 +9,32 @@
     <link rel="stylesheet" href="main.css">
     <style></style>   
     <script>
-        const form = document.querySelector('form');
-        const nameInput = document.querySelector('#name');
+        // const form = document.querySelector('form');
+        // const nameInput = document.querySelector('#name');
         
-        form.addEventListener('submit', (event) => {
+        // form.addEventListener('submit', (event) => {
           // Prevent form from submitting
-          event.preventDefault();
+        //   event.preventDefault();
           
           // Check if name field is valid
-          if (!nameInput.checkValidity()) {
-            alert('Please enter a valid name');
-          } else {
+        //   if (!nameInput.checkValidity()) {
+        //     alert('Please enter a valid name');
+        //   } else {
             // Form is valid, submit it
-            form.submit();
-          }
-        });
+        //     form.submit();
+        //   }
+        // });
       </script>      
 </head>
 
-<body background="https://www.google.com/imgres?imgurl=https%3A%2F%2Fcsshint.com%2Fwp-content%2Fuploads%2F2020%2F01%2FCSS-Animated-Backgrounds-2.gif&imgrefurl=https%3A%2F%2Fcsshint.com%2Fcss-animated-backgrounds%2F&tbnid=uxVN2496OUJB9M&vet=12ahUKEwiry4mhvND9AhW1ndgFHXkYCuwQMygFegUIARCAAg..i&docid=whBNxsGrrXHiDM&w=601&h=315&q=animated%20background&ved=2ahUKEwiry4mhvND9AhW1ndgFHXkYCuwQMygFegUIARCAAg">
+<body>
     <table align="center" id="table">
-        <form align="center" name="myForm">
+        <form align="center" onsubmit="event.preventDefault();" name="myForm">
             <th colspan="2"><h2>student form</h2></th>
 
             <tr>
                 <td><label for="name">Name:</label> </td>             
-                <td><input type="text" id="name" pattern= "[a-Z]"  required name="name" minlength="7" maxlength="20" placeholder="First-Name Last-name">  </td>
+                <td><input type="text" id="name"   required name="name" minlength="7" maxlength="20" placeholder="First-Name Last-name">  </td>
             </tr>
             <tr>
                 <td><label for="email-input">Email :</label></td>
@@ -45,8 +45,8 @@
                 <td><input type="tel" id="phone"required placeholder="phone number" minlength="10" maxlength="10" name="phone-input"></td>
             </tr>
             <tr>
-                <td><label for="date-input">Birthdate:</label></td>
-                <td><input type="date" id="dob" required name="date-input"></td>
+                <td><label for="dob">Birthdate:</label></td>
+                <td><input type="date" id="dob" required name="dob"></td>
             </tr>
             <tr>
                 <td><label for="time-input">Appointment time:</label></td>
@@ -60,10 +60,10 @@
             </tr>
             <tr>
                 <td>
-                    <label for="dropdown-input">Favorite color :</label>
+                    <label for="fcolor">Favorite color :</label>
                 </td>
                 <td>
-                    <select id="fcolor" name="dropdown-input" required>
+                    <select id="fcolor" name="fcolor" required>
                         <option value="black ">black </option>
                         <option value="yellow">yellow</option>
                         <option value="brown ">brown </option>
@@ -77,12 +77,12 @@
                 </td>
             </tr>
             <tr>
-                <td><label>payment method:</label></td>
-                <td required>
+                <td><label for="payment">payment method:</label></td>
+                <td >
                     <label for="radio-1" >Paytm</label>
-                    <input type="radio" id="paytm" checked name="radio-group" value="Paytm">
+                    <input type="radio" id="payment" checked name="payment" value="Paytm">
                     <label for="radio-2">visa</label>
-                    <input type="radio" id="visa" name="radio-group" value="visa">
+                    <input type="radio" id="payment" name="payment" value="visa">
                 </td>
             </tr>
             <tr>
@@ -100,12 +100,12 @@
                 </td>
             </tr>
             <tr>
-                <td><label for="range-input">Age :</label></td>
-                <td><input type="range" id="range" name="range-input" min="18" max="60"></td>
+                <td><label for="age">Age :</label></td>
+                <td><input type="range" id="range" name="age" min="18" max="60"></td>
             </tr>
             <tr>
-                <td><label for="file-input">File input:</label></td>
-                <td><input type="file" id="photo" name="file-input"></td>
+                <td><label for="photo">File input:</label></td>
+                <td><input type="file" id="photo" name="photo"></td>
             </tr>
             <tr>
                  
@@ -119,7 +119,31 @@
 
         </form>
     </table>
-    <script src="main.js"></script>
+
+    <!-- fetching data -->
+    <table align="center" class="list" id="emplist" border="1px solid blue">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>DOB</th>
+            <th>A-Time</th>
+            <th>color</th>
+            <th>Payment</th>
+            <th>checkbocx</th>
+            <th>age</th>
+            <th>Photo</th>
+            
+            
+            
+        </thead>
+        <tbody>
+
+
+        </tbody>
+    </table>
+    <script src="new.js"></script>
+
 </body>
 
 </html>
