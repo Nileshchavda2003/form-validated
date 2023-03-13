@@ -10,7 +10,7 @@ var selectedRow = null;
 //     }
 // }
 
-document.getElementById("sub").addEventListener("click", function() {
+function onFormSubmit() {
     if (validate()) {
         var formData = readFormData();
         if (selectedRow == null)
@@ -19,7 +19,7 @@ document.getElementById("sub").addEventListener("click", function() {
             updateRecord(formData);
         resetForm();
     }
-});
+}
 
 
 sub.addEventListener("click", function(){ 
@@ -34,23 +34,6 @@ sub.addEventListener("click", function(){
     
 });
 
-// sub.addEventListener("click", function(){ 
-
-//     if (validate()) {
-//         var formData = readFormData();
-//         if (selectedRow == null)
-//             insertNewRecord(formData);
-//         else
-//             updateRecord(formData);
-//         resetForm();
-//     }
-// });
-
-// function validateForm(){
-//     var formData =readFormData();
-//     insertNewRecord(formData);
-//     resetform();
-// }
 function readFormData(){
     formData["name"]  = document.getElementById('name').value;
     formData["email"]   = document.getElementById('email').value;
@@ -96,12 +79,8 @@ function insertNewRecord(data){
     cell11 = newRow.insertCell(10);
     cell11.innerHTML =data.photo;
 
-    
-    cell2 = newRow.insertCell(11);
-    cell2.innerHTML =`<a onClick="onEdit(this)">Edit </a>`;
- 
-    cell2 = newRow.insertCell(12);
-    cell2.innerHTML =`<a>Delete</a>`;
+    cell12.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+    <a onClick="onDelete(this)">Delete</a>`;
 
 }
 
@@ -117,6 +96,7 @@ document.getElementById('checkbox-1').value="";
 document.getElementById('checkbox-2').value="";
 document.getElementById('age').value="";
 document.getElementById('photo').value="";
+selectedRow = null;
 
 }
 function onEdit(td) {
@@ -166,3 +146,16 @@ function onDelete(td) {
 //     }
 //     return isValid;
 // }
+
+function validate() {
+    isValid = true;
+    if (document.getElementById("name").value == "") {
+        isValid = false;
+        document.getElementById("fullNameValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
+            document.getElementById("fullNameValidationError").classList.add("hide");
+    }
+    return isValid;
+}

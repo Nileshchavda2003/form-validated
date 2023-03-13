@@ -24,12 +24,16 @@
         //     form.submit();
         //   }
         // });
-      </script>      
+      //</script> 
+    <script src="disp.js"></script>
+
 </head>
 
 <body>
     <table align="center" id="table">
-        <form align="center" onsubmit="event.preventDefault();validateForm();" autocomplete="off" name="myForm">
+        <form align="center" onsubmit="event.preventDefault();onFormSubmit();" 
+        // autocomplete="off" 
+        name="myForm">
             <th colspan="2"><h2>student form</h2></th>
 
             <tr>
@@ -37,21 +41,21 @@
                 <td><input type="text" id="name"   required name="name" minlength="7" maxlength="20" placeholder="First-Name Last-name">  </td>
             </tr>
             <tr>
-                <td><label for="email-input">Email :</label></td>
-                <td><input type="email" id="email" required placeholder="email" name="email-input"></td>
+                <td><label for="email">Email :</label></td>
+                <td><input type="email" id="email" required placeholder="email" name="email"></td>
             </tr>
             <tr>
-                <td><label for="phone-input">Phone number:</label></td>
-                <td><input type="tel" id="phone"required placeholder="phone number" minlength="10" maxlength="10" name="phone-input"></td>
+                <td><label for="phone">Phone number:</label></td>
+                <td><input type="tel" id="phone"required placeholder="phone number" minlength="10" maxlength="10" name="phone"></td>
             </tr>
             <tr>
                 <td><label for="dob">Birthdate:</label></td>
                 <td><input type="date" id="dob" required name="dob"></td>
             </tr>
             <tr>
-                <td><label for="time-input">Appointment time:</label></td>
+                <td><label for="time">Appointment time:</label></td>
                 <td>
-                    <select id="Atime" name="time-input" required>
+                    <select id="time" name="time" required>
                         <option value="8:00am">8:00am</option>
                         <option value="9:00am">9:00am</option>
                         <option value="10:00am">10:00am</option>
@@ -92,9 +96,9 @@
 
                 </td>
                 <td>
-                    <input type="checkbox" id="checkbox-1" name="checkbox-1" value="Option 1">
+                    <input type="checkbox" id="checkbox1" name="checkbox-1" value="Option 1">
                     <label for="checkbox-1">Option 1</label>
-                    <input type="checkbox" id="checkbox-2" name="checkbox-2" value="Option 2">
+                    <input type="checkbox" id="checkbox2" name="checkbox-2" value="Option 2">
                     <label for="checkbox-2">Option 2</label>
 
                 </td>
@@ -109,7 +113,7 @@
             </tr>
             <tr>
                  
-                <td colspan="2" align="center"> <br> <br><input type="submit"  onclick="validateForm()" id="sub" ></td>
+                <td colspan="2" align="center"> <br> <br><input type="submit"  onclick="onFormSubmit()" id="sub" ></td>
 
             </tr> 
 
@@ -121,19 +125,22 @@
     </table>
 
     <!-- fetching data -->
+    <h1>Fetch data</h1>
     <table align="center" class="list" id="emplist" border="1px solid blue">
         <thead>
+            <tr>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
             <th>DOB</th>
-            <th>A-Time</th>
+            <th>Time</th>
             <th>color</th>
             <th>Payment</th>
-            <th>checkbocx</th>
+            <th>checkbocx1</th>
+            <th>checkbocx2</th>
             <th>age</th>
             <th>Photo</th>
-            
+        </tr>
             
             
         </thead>
@@ -142,7 +149,7 @@
 
         </tbody>
     </table>
-    <script src="main.js"></script>
+    <script src="new.js"></script>
 
 </body>
 
