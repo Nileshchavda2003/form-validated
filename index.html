@@ -29,7 +29,7 @@
 
 <body>
     <table align="center" id="table">
-        <form align="center" onsubmit="event.preventDefault();" name="myForm">
+        <form align="center" onsubmit="event.preventDefault();validateForm();" autocomplete="off" name="myForm">
             <th colspan="2"><h2>student form</h2></th>
 
             <tr>
@@ -109,7 +109,7 @@
             </tr>
             <tr>
                  
-                <td colspan="2" align="center"> <br> <br><input type="submit" value="Submit" onclick="validateForm()" ></td>
+                <td colspan="2" align="center"> <br> <br><input type="submit"  onclick="validateForm()" id="sub" ></td>
 
             </tr> 
 
@@ -142,7 +142,7 @@
 
         </tbody>
     </table>
-    <script src="new.js"></script>
+    <script src="main.js"></script>
 
 </body>
 
